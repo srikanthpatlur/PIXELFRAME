@@ -1,0 +1,550 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PIXELFRAME | Photography Studio</title>
+
+    <style>
+
+       
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+
+        
+
+        header {
+            text-align: center;
+            padding: 35px 15px 20px;
+        }
+
+        header h1 {
+            color: goldenrod;
+            letter-spacing: 12px;
+            font-size: 35px;
+            padding-top: 10px;
+        }
+
+        header .text {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 35px;
+            padding-top: 20px;
+        }
+
+        header .text a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        header .text a:hover {
+            color: goldenrod;
+        }
+
+        header .moment {
+            color: gold;
+            font-size: 12px;
+            padding-top: 15px;
+            padding-bottom: 20px;
+        }
+
+
+        
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+
+        
+
+        main .font {
+            border: 1px solid goldenrod;
+            border-radius: 12px;
+            box-shadow: 0 0 18px rgba(218, 165, 32, 0.15);
+
+            padding: 25px 15px;
+            margin: 10px 20px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            transition: 0.3s;
+        }
+
+        main .font:hover {
+            box-shadow: 0 0 25px rgba(218, 165, 32, 0.3);
+            border-color: gold;
+        }
+        main .font h3 {
+            color: goldenrod;
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+        }
+        main .font img {
+            display: block;
+
+            width: 90%;
+            max-width: 700px;
+            height: auto;
+
+            object-fit: cover;
+
+            border-radius: 10px;
+
+            margin: 25px auto;
+
+            box-shadow: 0 5px 20px rgba(255, 255, 255, 0.15);
+        }
+        main .font p {
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        main .font .w,
+        main .font .x {
+            color: goldenrod;
+        }
+
+
+       
+
+        main .font mark {
+            background-color: transparent;
+            color: gold;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin: 18px auto;
+        }
+        main .font .price {
+            color: white;
+            margin: 8px;
+            font-size: 15px;
+        }
+
+        main .font del {
+            color: #999;
+        }
+
+        main .font u {
+            color: gold;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        main .font .book-link {
+            color: goldenrod;
+            border: 1px solid goldenrod;
+            border-radius: 25px;
+            padding: 12px 25px;
+            margin-top: 20px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        main .font .book-link:hover {
+            background-color: goldenrod;
+            color: black;
+        }
+        .footer {
+            background-color: #0b0b0b;
+            border-top: 1px solid goldenrod;
+
+            margin-top: 50px;
+            padding: 50px 7% 20px;
+
+            font-family: Arial, sans-serif;
+        }
+
+        
+
+        .footer * {
+            background-color: transparent;
+        }
+        .footer .footer-top {
+            display: grid;
+
+            grid-template-columns: 1.4fr 1fr 1.3fr 1.3fr;
+
+            gap: 35px;
+
+            padding-bottom: 40px;
+        }
+
+
+        .footer .brand h2 {
+            color: goldenrod;
+            font-size: 26px;
+            letter-spacing: 4px;
+            margin-bottom: 18px;
+        }
+
+        .footer .brand h2 span {
+            color: white;
+        }
+
+        .footer .brand p {
+            color: #aaa;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .footer .brand h4 {
+            color: goldenrod;
+            font-size: 11px;
+            margin-top: 18px;
+            letter-spacing: 1px;
+            line-height: 1.7;
+        }
+        .footer .footer-box {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .footer .footer-box h3 {
+            color: goldenrod;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .footer .footer-box a {
+            color: #aaa;
+            font-size: 13px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer .footer-box a:hover {
+            color: goldenrod;
+            padding-left: 5px;
+        }
+
+        .footer .footer-box p {
+            color: #aaa;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+        .footer .social {
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+
+            padding: 22px 0;
+
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            flex-wrap: wrap;
+        }
+
+        .footer .social a {
+            color: #999;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer .social a:hover {
+            color: goldenrod;
+        }
+        .footer .copyright {
+            text-align: center;
+            padding-top: 22px;
+        }
+
+        .footer .copyright p {
+            color: #777;
+            font-size: 10px;
+            letter-spacing: 1px;
+            line-height: 2;
+        }
+        @media (max-width: 800px) {
+
+            header h1 {
+                font-size: 30px;
+                letter-spacing: 8px;
+            }
+
+            .footer .footer-top {
+                grid-template-columns: 1fr 1fr;
+                text-align: center;
+            }
+
+            .footer .brand {
+                grid-column: span 2;
+            }
+
+            .footer .footer-box {
+                align-items: center;
+            }
+
+        }
+        @media (max-width: 480px) {
+
+            header h1 {
+                font-size: 23px;
+                letter-spacing: 5px;
+            }
+
+            header .text {
+                gap: 18px;
+            }
+
+            header .text a {
+                font-size: 12px;
+            }
+
+            main .font {
+                margin: 10px;
+                padding: 15px;
+            }
+
+            main .font h3 {
+                font-size: 21px;
+            }
+
+            main .font p {
+                font-size: 16px;
+            }
+
+            .footer {
+                padding: 35px 20px 20px;
+            }
+
+            .footer .footer-top {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .footer .brand {
+                grid-column: auto;
+            }
+
+            .footer .footer-box {
+                align-items: center;
+            }
+
+            .footer .social {
+                gap: 18px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+    <header>
+
+        <h1>PIXELFRAME</h1>
+
+        <nav class="text">
+            <a href="#">Capture</a>
+            <a href="#">Create</a>
+            <a href="#">Remember</a>
+        </nav>
+
+        <div class="moment">
+            "Every Moment Deserves To Be Seen."
+        </div>
+
+    </header>
+
+    <main>
+        <section class="font">
+
+            <h3>Wedding Stories</h3>
+
+            <img src="../public/images/wedding.jpg"
+                 alt="Wedding photography">
+
+            <p>
+                Turning your special day into
+                <span class="w">timeless memories.</span>
+            </p>
+
+            <mark>LIMITED TIME OFFER</mark>
+
+            <div class="price">
+                Old Price:
+                <del>₹45,000</del>
+            </div>
+
+            <div class="price">
+                New Price:
+                <u>₹34,999</u>
+            </div>
+
+            <a href="#" class="book-link">
+                Book Your Wedding
+            </a>
+
+        </section>
+        <section class="font">
+
+            <h3>Portrait Studio</h3>
+
+            <img src="../public/images/potriate.jpg"
+                 alt="Portrait photography">
+
+            <p>
+                Professional portraits with
+                <span class="x">creative lighting & style.</span>
+            </p>
+
+            <div class="price">
+                Starting From:
+                <u>₹2,999</u>
+            </div>
+
+            <a href="#" class="book-link">
+                Book Your Portrait
+            </a>
+
+        </section>
+
+        <section class="font">
+
+            <h3>Cinematic Moments</h3>
+
+            <img src="../public/images/cinimatic-2.jpg"
+                 alt="Cinematic photography">
+
+            <p>
+                Beautiful stories.
+                <span class="w">Beautifully captured.</span>
+            </p>
+
+            <a href="#" class="book-link">
+                Book Your Session Today
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+    <footer class="footer">
+
+
+        <div class="footer-top">
+
+
+           
+
+            <div class="brand">
+
+                <h2>PIXELFRAME<span>.</span></h2>
+
+                <p>
+                    We don't just capture pictures,
+                    <br>
+                    we capture emotions.
+                </p>
+
+                <h4>
+                    Every Moment Deserves To Be Seen.
+                </h4>
+
+            </div>
+
+
+
+   
+
+            <div class="footer-box">
+
+                <h3>EXPLORE</h3>
+
+                <a href="#">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Our Services</a>
+                <a href="#">Gallery</a>
+
+            </div>
+
+            <div class="footer-box">
+
+                <h3>OUR SERVICES</h3>
+
+                <a href="#">Wedding Photography</a>
+                <a href="#">Portrait Studio</a>
+                <a href="#">Cinematic Films</a>
+                <a href="#">Events</a>
+
+            </div>
+
+            <div class="footer-box contact">
+
+                <h3>GET IN TOUCH</h3>
+
+                <p>☎ +91 8688241294</p>
+
+                <p>✉ pixelframe@gmail.com</p>
+
+                <p>⌖ Hyderabad, India</p>
+
+            </div>
+
+
+        </div>
+
+        <div class="social">
+
+            <a href="#">INSTAGRAM</a>
+
+            <a href="#">FACEBOOK</a>
+
+            <a href="#">YOUTUBE</a>
+
+            <a href="#">WHATSAPP</a>
+
+        </div>
+
+        <div class="copyright">
+
+            <p>
+                © 2026 PIXELFRAME. ALL RIGHTS RESERVED.
+            </p>
+
+            <p>
+                CRAFTED WITH ♥ FOR BEAUTIFUL MEMORIES.
+            </p>
+
+        </div>
+
+
+    </footer>
+
+
+</body>
+
+</html>
